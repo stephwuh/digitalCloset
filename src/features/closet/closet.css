@@ -1,0 +1,60 @@
+
+.category-container{
+    /* width: 75%; */
+    margin: 50px 0;
+    padding: 0 5%;
+    margin-left: 300px;
+    
+}
+
+.category-title{
+    margin-bottom: 1.5rem;
+}
+
+.content-carousel{
+    box-shadow: 5px 5px rgb(240, 239, 239);
+    background-color:#fbf7fb ;
+    padding: 50px 10px 20px 10px;
+}
+
+@media only screen and (min-width: 1025px){
+    .page-container{
+        display: flex;
+        
+    }
+    .page-content{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 1025px){
+
+    .category-container{
+        margin: 50px 0;
+        padding: 0 5%;  
+    }
+
+}
+
+.container{
+    width: 100%;
+}
+
+
+
+/* style changes to override react-carousel default styling */
+
+.ehkxHv{
+    background-color: #fbf7fb !important;
+    box-shadow: none !important;
+}
+
+.cGKbZh {
+    background-color: #fbf7fb !important;
+    box-shadow: none !important;
+}
+
+.cGKbZh:hover:enabled, .cGKbZh:focus:enabled {
+    color: rgb(172, 170, 170) !important;
+}

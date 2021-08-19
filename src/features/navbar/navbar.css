@@ -1,0 +1,118 @@
+.nav{
+    width: 100%;
+    height: 50px;
+    background-color: #DFA8E4;
+    display: flex;
+
+
+}
+
+.nav-subcontainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-subcontainer img{
+    margin-right: 10px;
+}
+
+.navLinks{
+    list-style: none;
+}
+
+.navLinks>li{
+    margin-bottom: 30px;
+}
+
+.navbar-link{
+    text-decoration: none; 
+    color: black;
+}
+
+.navbar-link:visited {
+    color: black;
+}
+
+.hamburger{
+
+    margin: auto 0 auto 10px
+}
+
+.logout-button{
+
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    width: 5rem;
+    height: 1.5rem;
+
+}
+
+.logout-side{
+    margin-left: 55px;
+    margin-top: 
+}
+
+.logout-mobile{
+    margin: auto 10px auto 0;
+}
+
+.line{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+.dropdown-menu{
+    background-color:white;
+    width: 90%;
+    height: 33%;
+    margin: auto;
+    position: absolute;
+    top: 50px; left: 0; right: 0;
+    border-radius: 5px;
+    color: black;
+    z-index: 1;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px rgba(66, 37, 37, 0.6);
+}
+
+
+.hide{
+    display: none; 
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 1rem;
+
+}
+
+.mobile-nav-off{
+    display: none;
+}
+
+
+/* side nav related styling below */
+
+
+.side-nav{
+
+    width: 300px;
+    height: 100%;
+    background-color: #DFA8E4 ;
+    position: fixed;
+}
+
+.side-nav-off{
+    display: none;
+}
+
+.navLink-sideNav{
+    margin: 55px 0 0 55px;
+}
+.navLink-sideNav>img{
+    margin-top: 0;
+}

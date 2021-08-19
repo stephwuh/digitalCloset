@@ -1,0 +1,30 @@
+.category-container-weather{
+
+  margin-top: 50px;
+  padding: 0 5%;
+  
+}
+
+@media only screen and (min-width: 1025px){
+
+  .category-container-weather{
+      margin-top: 50px;
+      padding: 0 5%;
+      margin-left: 300px;  
+  }
+
+ 
+
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.weatherInput{
+  width: 150px;
+}

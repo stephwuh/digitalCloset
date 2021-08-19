@@ -1,0 +1,30 @@
+
+.outfit-container{
+
+    padding: 10px;
+    margin: 0 10px;
+    text-align: center;
+
+    width: 200px;
+    height: 100%;
+    background-color: rgb(236, 233, 233);
+
+    box-shadow: 5px 5px lightgray;
+}
+
+.rec .rec-swipable{
+    align-items: center;
+}
+
+
+
+.outfit-image{
+    margin: 0 3px;
+}
+
+.clear{
+    margin-top: 1rem;
+}
+
+
+
