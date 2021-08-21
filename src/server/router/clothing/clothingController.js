@@ -14,10 +14,15 @@ module.exports = {
       userId,
     } = req.body;
 
+    console.log(req.body)
+
     try {
       const uploadedResponse = await cloudinary.uploader.upload(clothingImage, {
         upload_preset: 'capstoneProject',
       });
+
+      console.log(uploadedResponse)
+
       let image_public_id = uploadedResponse.public_id;
       await Clothing.create({
         image: image_public_id,

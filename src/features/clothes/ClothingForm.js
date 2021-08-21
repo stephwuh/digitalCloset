@@ -93,9 +93,8 @@ const ClothingForm = props => {
     if (!image && !category && !color) return;
 
     let file = {
-      
+
       clothingImage: image,
-      clothingImageCloudinary: location.state.image,
       clothingCategory: category,
       clothingBrand: brand,
       clothingColor: color,
@@ -104,12 +103,11 @@ const ClothingForm = props => {
     };
 
     try {
-      await axios.put('/api/clothing/upload', file);
+      await axios.post('/api/clothing/upload', file);
+      alert('Successfully updated');
     } catch (error) {
       console.log(error);
     }
-
-    alert('Successfully updated');
 
     history.push('/closet');
 
@@ -137,8 +135,6 @@ const ClothingForm = props => {
     }
   };
 
-  console.log(formUse)
-//   console.log(location.state.id)
 
   return (
       
