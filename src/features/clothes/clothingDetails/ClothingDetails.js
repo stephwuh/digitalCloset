@@ -20,6 +20,9 @@ const ClothingDetails = () => {
   const [edit, setEdit] = useState(false);
   const [description, setDescription] = useState(location.state.description);
 
+  console.log(location.state.id)
+
+
   const handleFileInputChange = e => {
     const file = e.target.files[0];
     previewFile(file);
