@@ -5,10 +5,12 @@ import { Image } from 'cloudinary-react';
 import Creatable from 'react-select/creatable';
 
 import AddClothesToOutfit from './addOutfit/AddClothesToOutfit.js';
+import useButtonCombo from '../custom-hooks/useButtonCombo.js';
 
 const OutfitsFormPresentational = props => {
   const location = useLocation();
   const outfitStatus = useSelector(state => state.outfitSelection);
+  const buttonCombo = useButtonCombo(props.handleEditOnClick, props.handleDeleteOnClick)
 
   return (
     <div className="page-content">
@@ -130,27 +132,7 @@ const OutfitsFormPresentational = props => {
               </button>
             )}
 
-            {props.formUse === 'outfitDetails' && (
-              <>
-                <button className="form-button submit" type="submit">
-                  Submit
-                </button>
-                <button
-                  className="form-button cancel"
-                  type="button"
-                  onClick={props.handleCancelOnClick}
-                >
-                  Cancel
-                </button>
-                <button
-                  className="form-button delete"
-                  type="but ton"
-                  onClick={props.handleDeleteOnClick}
-                >
-                  Delete
-                </button>
-              </>
-            )}
+            {props.formUse === 'outfitDetails' && buttonCombo}
           </div>
           <br />
         </form>
