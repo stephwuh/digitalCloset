@@ -11,21 +11,14 @@ const ClothingForm = props => {
   const history = useHistory();
   const location = useLocation();
 
-  const [formUse, setFormUse] = useState(props.formUse);
-
+  const [formUse, setFormUse] = useState(props.formUse); 
   const [image, setImage] = useState('');
-  const [category, setCategory] = useState('');
-  const [brand, setBrand] = useState('');
-  const [color, setColor] = useState('');
+  const [category, setCategory] = useState(props.formUse === 'clothingDetails' ? location.state.clothingCategory : '');
+  const [brand, setBrand] = useState(props.formUse === 'clothingDetails' ? location.state.brand : '');
+  const [color, setColor] = useState(props.formUse === 'clothingDetails' ? location.state.color : '');
   const [edit, setEdit] = useState(false);
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState(props.formUse === 'clothingDetails' ? location.state.description : '');
 
-  if(formUse === 'clothingDetails'){
-    setCategory(location.state.clothingCategory)
-    setBrand(location.state.brand)
-    setColor(location.state.color)
-    setDescription(location.state.description)
-  } 
 
   const handleFileInputChange = e => {
     const file = e.target.files[0];
@@ -256,7 +249,11 @@ const ClothingForm = props => {
             />
           </div>
         </div>
+            
         <div className="button-container">
+            
+
+        
           {formUse === 'addClothes' && (
             <button className="form-button submit" type="submit">
               Submit
@@ -265,7 +262,7 @@ const ClothingForm = props => {
 
           {edit &&
             formUse ===
-              'clothingDetails'(
+              'clothingDetails' && (
                 <div>
                   <button className="form-button submit" type="submit">
                     Submit
@@ -285,11 +282,13 @@ const ClothingForm = props => {
                   </button>
                 </div>
               )}
+
           {!edit && formUse === 'clothingDetails' && (
             <button className="form-button update" onClick={handleEditOnClick}>
               Update
             </button>
           )}
+ 
         </div>
       </form>
     </div>
