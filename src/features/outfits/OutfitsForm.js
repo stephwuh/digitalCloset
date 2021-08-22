@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { Image } from 'cloudinary-react';
-import Creatable from 'react-select/creatable';
 
-import AddClothesToOutfit from './addOutfit/AddClothesToOutfit.js';
+import OutfitsFormPresentational from './OutfitsFormPresentational.js';
 import { bindActionCreators } from 'redux';
 import { useHistory } from 'react-router-dom';
 import { actionCreators } from '../.././redux/index.js';
@@ -15,13 +13,17 @@ const OutfitsForm = props => {
   const history = useHistory();
 
   const [outfit, setOutfit] = useState(false);
-  const [outfitCategory, setOutfitCategory] = useState( props.formUse === "outfitDetails" ? location.state.category : "");
-  const [edit, setEdit] = useState( props.formUse === 'addOutfit' ? true : false);
+  const [outfitCategory, setOutfitCategory] = useState(
+    props.formUse === 'outfitDetails' ? location.state.category : ''
+  );
+  const [edit, setEdit] = useState(
+    props.formUse === 'addOutfit' ? true : false
+  );
 
   const outfitStatus = useSelector(state => state.outfitSelection);
   const categoryStatus = useSelector(state => state.outfitCategory);
 
-  console.log(outfitStatus)
+  console.log(outfitStatus);
 
   const dispatch = useDispatch();
   const { outfitReset } = bindActionCreators(actionCreators, dispatch);
@@ -158,152 +160,17 @@ const OutfitsForm = props => {
   }, []);
 
   return (
-    <div className="page-content">
-      <div className="category-container">
-        <h3 className="category-title">Outfit Image</h3>
-        {props.formUse === 'outfitDetails' && !edit && (
-          <div className="content image">
-            {outfitStatus.outerwear.length === 0 &&
-              outfitStatus.layer.length === 0 &&
-              outfitStatus.shirt.length === 0 &&
-              outfitStatus.pants.length === 0 &&
-              location.state.image.map((image, index) => {
-                return (
-                  <Image
-                    key={index}
-                    cloudName="drfwodrev"
-                    publicId={image.image}
-                    width="100"
-                    crop="scale"
-                  />
-                );
-              })}
-          </div>
-        )}
-      </div>
-      {props.formUse === 'outfitDetails' && !edit &&    (
-        <>
-          <div className="category-container">
-            <h3 className="category-title">OutfitCategory</h3>
-            <div className="content">
-              <h3>{location.state.category}</h3>
-            </div>
-          </div>
-          <div className="button-container">
-            <button
-              className="form-button update"
-              onClick={handleEditOnClick}
-            >
-              Update
-            </button>
-          </div>
-        </>
-      )}
-
-    
-      { edit && (
-        <form onSubmit={handleSubmit}>
-          <div className="category-container">
-            <div className="content image">
-              {outfitStatus.outerwear.map((clothe, index) => {
-                return (
-                  <Image
-                    key={index}
-                    cloudName="drfwodrev"
-                    publicId={clothe.image}
-                    width="150"
-                    crop="scale"
-                  />
-                );
-              })}
-              {outfitStatus.layer.map((clothe, index) => {
-                return (
-                  <Image
-                    key={index}
-                    cloudName="drfwodrev"
-                    publicId={clothe.image}
-                    width="150"
-                    crop="scale"
-                  />
-                );
-              })}
-              {outfitStatus.shirt.map((clothe, index) => {
-                return (
-                  <Image
-                    key={index}
-                    cloudName="drfwodrev"
-                    publicId={clothe.image}
-                    width="150"
-                    crop="scale"
-                  />
-                );
-              })}
-              {outfitStatus.pants.map((clothe, index) => {
-                return (
-                  <Image
-                    key={index}
-                    cloudName="drfwodrev"
-                    publicId={clothe.image}
-                    width="150"
-                    crop="scale"
-                  />
-                );
-              })}
-
-              <br />
-            </div>
-          </div>
-          <div className="category-container">
-            <h3 className="category-title">Closet</h3>
-            <div className="content">
-              <AddClothesToOutfit />
-            </div>
-          </div>
-          <div className="category-container">
-            <h3 className="category-title">Outfit Category</h3>
-            <div className="content">
-              <Creatable
-                isClearable
-                options={categories}
-                onChange={value => handleChange('categories', value)}
-                value={outfitCategory}
-              />
-            </div>
-          </div>
-
-          <div className="button-container">
-            {props.formUse === 'addOutfit' && (
-              <button className="form-button submit" type="submit">
-                Submit
-              </button>
-            )}
-
-            {props.formUse === 'outfitDetails' && (
-              <>
-                <button className="form-button submit" type="submit">
-                  Submit
-                </button>
-                <button
-                  className="form-button cancel"
-                  type="button"
-                  onClick={handleCancelOnClick}
-                >
-                  Cancel
-                </button>
-                <button
-                  className="form-button delete"
-                  type="but ton"
-                  onClick={handleDeleteOnClick}
-                >
-                  Delete
-                </button>
-              </>
-            )}
-          </div>
-          <br />
-        </form>
-      )}
-    </div>
+    <OutfitsFormPresentational
+      handleEditOnClick={handleEditOnClick}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
+      handleCancelOnClick={handleCancelOnClick}
+      handleDeleteOnClick={handleDeleteOnClick}
+      formUse={props.formUse}
+      edit={edit}
+      outfitCategory={outfitCategory}
+      categories={categories}
+    />
   );
 };
 
