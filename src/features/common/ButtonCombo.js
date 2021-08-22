@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export default function useButtonCombo(cancelFunc, deleteFunc) {
+export default function ButtonCombo(props) {
   return (
     <>
       <button className="form-button submit" type="submit">
@@ -10,14 +10,14 @@ export default function useButtonCombo(cancelFunc, deleteFunc) {
       <button
         className="form-button cancel"
         type="button"
-        onClick={cancelFunc}
+        onClick={props.handleCancelOnClick}
       >
         Cancel
       </button>
       <button
         className="form-button delete"
         type="but ton"
-        onClick={deleteFunc}
+        onClick={props.handleDeleteOnClick}
       >
         Delete
       </button>

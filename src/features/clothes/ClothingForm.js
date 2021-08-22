@@ -132,6 +132,12 @@ const ClothingForm = props => {
     }
   };
 
+    const handleCancelOnClick = () => {
+      setEdit(false);
+  
+    };
+
+
   return (
     <ClothingFormPresentational
       handleSubmitAddFile={handleSubmitAddFile}
@@ -143,6 +149,7 @@ const ClothingForm = props => {
       handleColorOnClick={handleColorOnClick}
       handleEditOnClick={handleEditOnClick}
       handleDeleteOnClick={handleDeleteOnClick}
+      handleCancelOnClick={handleCancelOnClick}
       image={image}
       formUse={formUse}
       edit={edit}

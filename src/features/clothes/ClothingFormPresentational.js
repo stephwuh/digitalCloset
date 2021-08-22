@@ -3,12 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
 
 import Colors from './Colors.js';
-import useButtonCombo from '../custom-hooks/useButtonCombo.js';
+
+
+import ButtonCombo from '.././common/ButtonCombo.js';
 
 const ClothingFormPresentational = props => {
   const location = useLocation();
-  const buttonCombo = useButtonCombo(props.handleEditOnClick, props.handleDeleteOnClick)
-
+ 
   return (
     <div className="page-content">
       <form
@@ -136,7 +137,10 @@ const ClothingFormPresentational = props => {
             </button>
           )}
 
-          {props.edit && props.formUse === 'clothingDetails' && buttonCombo}
+          {props.edit && props.formUse === 'clothingDetails' && <ButtonCombo
+            handleCancelOnClick = {props.handleCancelOnClick}
+            handleDeleteOnClick = {props.handleDeleteOnClick}
+          />}
 
           {!props.edit && props.formUse === 'clothingDetails' && (
             <button
