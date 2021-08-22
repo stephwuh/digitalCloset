@@ -1,9 +1,5 @@
+import React from 'react';
 
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-
-import AddClothesPresentational from './AddClothesPresentational';
 import '.././clothes.css';
 import NavBar from '../.././navbar/NavBar.js';
 import SideNav from '../.././navbar/SideNav.js';

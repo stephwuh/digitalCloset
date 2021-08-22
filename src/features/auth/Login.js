@@ -34,7 +34,6 @@ const Login = () => {
             setEmail("")
             setPassword("")
             
-            console.log(window.sessionStorage)
             window.location.reload()
 
            

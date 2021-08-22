@@ -17,7 +17,6 @@ const AddOutfitPresentational = (props) => {
       <form onSubmit={props.handleSubmit}>
         <div className="category-container">
           <h3 className="category-title">Outfit Image</h3>
-
           <div className="content image">
             {outfitStatus &&
               outfitStatus.outerwear.map((clothe, index) => {
@@ -68,8 +67,6 @@ const AddOutfitPresentational = (props) => {
                 );
               })}
             <br />
-          </div>
-          <div>
           </div>
           </div>
             <div className="category-container">
