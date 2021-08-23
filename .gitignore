@@ -25,6 +25,4 @@ yarn-error.log*
 .env
 
 
-#cloudinary information
 
-cloudinary.js
