@@ -5,7 +5,6 @@ import { Image } from 'cloudinary-react';
 import Creatable from 'react-select/creatable';
 
 import AddClothesToOutfit from './addOutfit/AddClothesToOutfit.js';
-
 import ButtonCombo from  '.././common/ButtonCombo.js';
 
 const OutfitsFormPresentational = props => {

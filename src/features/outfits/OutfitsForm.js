@@ -23,8 +23,6 @@ const OutfitsForm = props => {
   const outfitStatus = useSelector(state => state.outfitSelection);
   const categoryStatus = useSelector(state => state.outfitCategory);
 
-  console.log(outfitStatus);
-
   const dispatch = useDispatch();
   const { outfitReset } = bindActionCreators(actionCreators, dispatch);
 
