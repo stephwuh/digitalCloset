@@ -1,70 +1,151 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Digital Closet
 
-## Available Scripts
+The main goal of Digital Closet is to help users dress stylishly. 
+It aims to do so by allowing users to catalogue and organize their clothes digitally 
+and by providing them with outfit recommendations based on the clothes they have in their digital closet. 
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Client:** React, Redux, Cloudinary
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Server:** Node, Express, Bcrypt, Sequelize ORM, PostgreSQL
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Upload and save images of clothes.
+- Group images to form outfits and save for future reference. 
+- Provides weather information to help plan outfits. 
+- Provides outfit recommendations based on clothes in user's digital closet. 
+- Mobile responsive.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+## Environment Variables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project, you will need to add the following environment variables to your .env file
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`REACT_APP_WEATHERAPI_KEY`
 
-### `npm run eject`
+`REACT_APP_ZENSERP_KEY`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`CLOUDINARY_NAME`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`CLOUDINARY_API_KEY`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`CLOUDINARY_API_SECRET`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`SEQUELIZE_DATABASE_USER_ID`
 
-## Learn More
+`SEQUELIZE_DATABASE_PW`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`SEQUELIZE_DATABASE_NAME`
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Below instructions are based on how I (the creator of the project) created the project in Windows.
 
-### Code Splitting
+1. Install Node.js, npm, and git if you haven't already. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Clone the project into the directory of your choosing on your local machine. 
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/stephwuh/digitalCloset.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Install related dependencies while in project directory.  
 
-### Making a Progressive Web App
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Create .env file at the root of the project.
 
-### Advanced Configuration
+5. Create Cloudinary account and connect it to project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project uses Cloudinary's media platform to save image files to cloud storage. 
 
-### Deployment
+www.cloudinary.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Retrieve 'cloud name', 'API Key', and 'API Secret' from Dashboard under Account Details.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Input Cloudinary information into .env file as follows: 
+
+```bash
+CLOUDINARY_NAME='cloud name'
+CLOUDINARY_API_KEY='API Key'
+CLOUDINARY_API_SECRET='API Secret'
+```
+
+'cloud name', 'API Key', and 'API Secret' needs to be surrounded by quotations. 
+
+
+6. Create Zenserp account and connect it to project.
+
+This project uses Zenserp's google image search API for the outfit recommendation feature.
+
+https://zenserp.com/google-image-search-api/
+
+
+Retrieve 'API Key' from Dashboard under API key.
+
+Input API key into .env file as follows: 
+
+```bash
+REACT_APP_ZENSERP_KEY='API key'
+```
+
+'API Key' needs to be surrounded by quotations. 
+
+7. Create WeatherAPI account and connect it to project.
+
+This project uses weatherapi to provide users with weather information.
+
+https://www.weatherapi.com/
+
+Retrieve 'API Key' from Dashboard under API key.
+
+Input API key into .env file as follows: 
+
+```bash
+REACT_APP_WEATHERAPI_KEY='API key'
+```
+
+'API Key' needs to be surrounded by quotations. 
+
+8. Install PostgreSQL server. 
+
+https://www.postgresql.org/download/windows/
+
+Setup password during installation. 
+
+9. Install PostgreSQL client GUI (Postbird).
+
+https://www.electronjs.org/apps/postbird
+
+When the installation finishes and the program opens, enter in the username and password set above in step 8
+to connect to your locally running Postgres instance.
+
+Create a new database (database tab -> create Database).
+
+
+10. Sequelize setup.
+
+Input database name, user ID, and password set in setps 8 and 9 into the .env file as follows:   
+
+```bash
+SEQUELIZE_DATABASE_USER_ID='user ID'
+SEQUELIZE_DATABASE_PW='password'
+SEQUELIZE_DATABASE_NAME='name'
+```
+
+Name, user ID, and password needs to be surrounded by quotations. 
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+  
