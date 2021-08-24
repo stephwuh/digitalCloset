@@ -63,14 +63,14 @@ npm install
 
 5. Create Cloudinary account and connect it to project.
 
- - This project uses Cloudinary's media platform to save image files to cloud storage. 
+  - This project uses Cloudinary's media platform to save image files to cloud storage. 
 
- - www.cloudinary.com
+  - www.cloudinary.com
 
- - Retrieve 'cloud name', 'API Key', and 'API Secret' from Dashboard under Account Details.
+  - Retrieve 'cloud name', 'API Key', and 'API Secret' from Dashboard under Account Details.
 
 
- - Input Cloudinary information into .env file as follows: 
+  - Input Cloudinary information into .env file as follows: 
 
 ```bash
 CLOUDINARY_NAME='cloud name'
@@ -78,61 +78,61 @@ CLOUDINARY_API_KEY='API Key'
 CLOUDINARY_API_SECRET='API Secret'
 ```
 
- - 'cloud name', 'API Key', and 'API Secret' needs to be surrounded by quotations. 
+  - 'cloud name', 'API Key', and 'API Secret' needs to be surrounded by quotations. 
 
 
 6. Create Zenserp account and connect it to project.
 
- - This project uses Zenserp's google image search API for the outfit recommendation feature.
+  - This project uses Zenserp's google image search API for the outfit recommendation feature.
 
- - https://zenserp.com/google-image-search-api/
+  - https://zenserp.com/google-image-search-api/
 
 
- - Retrieve 'API Key' from Dashboard under API key.
+  - Retrieve 'API Key' from Dashboard under API key.
 
- - Input API key into .env file as follows: 
+  - Input API key into .env file as follows: 
 
 ```bash
 REACT_APP_ZENSERP_KEY='API key'
 ```
 
- - 'API Key' needs to be surrounded by quotations. 
+  - 'API Key' needs to be surrounded by quotations. 
 
 7. Create WeatherAPI account and connect it to project.
 
- - This project uses weatherapi to provide users with weather information.
+  - This project uses weatherapi to provide users with weather information.
 
- - https://www.weatherapi.com/
+  - https://www.weatherapi.com/
 
- - Retrieve 'API Key' from Dashboard under API key.
+  - Retrieve 'API Key' from Dashboard under API key.
 
- - Input API key into .env file as follows: 
+  - Input API key into .env file as follows: 
 
 ```bash
 REACT_APP_WEATHERAPI_KEY='API key'
 ```
 
- - 'API Key' needs to be surrounded by quotations. 
+  - 'API Key' needs to be surrounded by quotations. 
 
 8. Install PostgreSQL server. 
 
- - https://www.postgresql.org/download/windows/
+  - https://www.postgresql.org/download/windows/
 
- - Setup password during installation. 
+  - Setup password during installation. 
 
 9. Install PostgreSQL client GUI (Postbird).
 
- - https://www.electronjs.org/apps/postbird
+  - https://www.electronjs.org/apps/postbird
 
- - When the installation finishes and the program opens, enter in the username and password set above in step 8
+  - When the installation finishes and the program opens, enter in the username and password set above in step 8
 to connect to your locally running Postgres instance.
 
- - Create a new database (database tab -> create Database).
+  - Create a new database (database tab -> create Database).
 
 
 10. Sequelize setup.
 
- - Input database name, user ID, and password set in setps 8 and 9 into the .env file as follows:   
+  - Input database name, user ID, and password set in setps 8 and 9 into the .env file as follows:   
 
 ```bash
 SEQUELIZE_DATABASE_USER_ID='user ID'
@@ -140,7 +140,7 @@ SEQUELIZE_DATABASE_PW='password'
 SEQUELIZE_DATABASE_NAME='name'
 ```
 
- - Name, user ID, and password needs to be surrounded by quotations. 
+  - Name, user ID, and password needs to be surrounded by quotations. 
 
 
 
