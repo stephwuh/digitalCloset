@@ -132,7 +132,7 @@ to connect to your locally running Postgres instance.
 
 10. Sequelize setup.
 
-  - Input database name, user ID, and password set in setps 8 and 9 into the .env file as follows:   
+  - Input database name, user ID, and password set in steps 8 and 9 into the .env file as follows:   
 
 ```bash
 SEQUELIZE_DATABASE_USER_ID='user ID'
