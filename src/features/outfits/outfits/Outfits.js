@@ -13,7 +13,8 @@ const Outfits = () => {
   const categoryStatus = useSelector(state => state.outfitCategory);
 
   const loadOutfit = async () => {
-    let res = await axios.get('/api/outfit/load');
+    //using a post instead of a get because I need to send id info
+    let res = await axios.get(`/api/outfit/load/${window.sessionStorage.userId}`);
 
     setAsyncData(res.data);
   };

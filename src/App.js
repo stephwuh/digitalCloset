@@ -23,12 +23,12 @@ function App() {
     <>
       <Switch>
         <ProtectedRoute
-          path="/closet/add-clothes"
+          path="/add-clothes"
           component={AddClothes}
           isAuth={window.sessionStorage.userId}
         />
         <ProtectedRoute
-          path="/closet/clothing-details"
+          path="/clothing-details"
           component={ClothingDetails}
           isAuth={window.sessionStorage.userId}
         />
@@ -38,7 +38,7 @@ function App() {
           isAuth={window.sessionStorage.userId}
         />
         <ProtectedRoute
-          path="/outfits/add-outfits"
+          path="/add-outfits"
           component={AddOutfit}
           isAuth={window.sessionStorage.userId}
         />
@@ -48,13 +48,13 @@ function App() {
           isAuth={window.sessionStorage.userId}
         />
         <ProtectedRoute
-          path="/outfits/outfit-details"
+          path="/outfit-details"
           component={OutfitDetails}
           isAuth={window.sessionStorage.userId}
         
         />
         <ProtectedRoute
-          path="/outfits/select-outfit"
+          path="/select-outfit"
           component={AddClothesToOutfit}
           isAuth={window.sessionStorage.userId}
         />

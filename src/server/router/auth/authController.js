@@ -27,7 +27,7 @@ module.exports = {
         email: email,
         password: passwordHash,
         gender: gender,
-        zipCode: 0,
+        zipCode: 20170,
       });
 
       let userInfo = {

@@ -17,9 +17,14 @@ module.exports = {
     res.send('Outfit upload successful');
  },
 
- load: async(_req, res) => {
+ load: async(req, res) => {
+
+    const userId = req.params.userId;
+
+
     const outfit = await Outfit.findAll({
-        include: { association: 'Outfits' },
+        where: { UserId: userId },
+        include: { association: 'Outfits' }
       });
     
       let catObj = {};
@@ -39,11 +44,17 @@ module.exports = {
       res.status(200).send(catObj);
  },
 
- getCategories: async(_req, res)=> {
+ getCategories: async(req, res)=> {
+
+    const userId = req.params.userId;
+
     const category = await Outfit.findAll({
+
+        where: {UserId: userId},
         attributes: ['outfitCategory'],
       });
       res.status(200).send(category);
+
  },
 
  update: async(req, res)=> {

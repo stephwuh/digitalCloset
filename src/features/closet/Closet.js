@@ -50,7 +50,7 @@ const Closet = () => {
                         crop="scale" //cloudinary uses to transformation
                         onClick={() => {
                           history.push({
-                            pathname: '/closet/clothing-details',
+                            pathname: '/clothing-details',
                             state: clothe,
                           });
                         }}
@@ -77,7 +77,7 @@ const Closet = () => {
                       crop="scale" //cloudinary uses to transformation
                       onClick={() => {
                         history.push({
-                          pathname: '/closet/clothing-details',
+                          pathname: '/clothing-details',
                           state: clothe,
                         });
                       }}
@@ -103,7 +103,7 @@ const Closet = () => {
                       crop="scale" //cloudinary uses to transformation
                       onClick={() => {
                         history.push({
-                          pathname: '/closet/clothing-details',
+                          pathname: '/clothing-details',
                           state: clothe,
                         });
                       }}
@@ -129,7 +129,7 @@ const Closet = () => {
                       crop="scale" //cloudinary uses to transformation
                       onClick={() => {
                         history.push({
-                          pathname: '/closet/clothing-details',
+                          pathname: '/clothing-details',
                           state: clothe,
                         });
                       }}

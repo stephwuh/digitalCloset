@@ -34,6 +34,10 @@
     color: black;
 }
 
+.navLinks .current{
+    text-decoration: underline;
+}
+
 .hamburger{
 
     margin: auto 0 auto 10px
@@ -51,7 +55,6 @@
 
 .logout-side{
     margin-left: 55px;
-    margin-top: 
 }
 
 .logout-mobile{
@@ -68,7 +71,7 @@
 .dropdown-menu{
     background-color:white;
     width: 90%;
-    height: 33%;
+    height: 44%;
     margin: auto;
     position: absolute;
     top: 50px; left: 0; right: 0;

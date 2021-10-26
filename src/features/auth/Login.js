@@ -26,7 +26,7 @@ const Login = () => {
         }
         try {
             let response = await axios.post("/api/auth/login", loginInfo)
-            console.log(response.data)
+           
             sessionStorage.setItem('userId', response.data.userId)
             sessionStorage.setItem('gender', response.data.gender)
             history.push('/closet');

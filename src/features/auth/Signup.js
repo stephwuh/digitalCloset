@@ -44,7 +44,7 @@ const Signup = () => {
             let response = await axios.post("/api/auth/signup", signupInfo);
             
             sessionStorage.setItem('userId', response.data.userId)
-            sessionStorage.setItem('userId', response.data.gender)
+            sessionStorage.setItem('gender', response.data.gender)
 
             history.push('/closet');
 

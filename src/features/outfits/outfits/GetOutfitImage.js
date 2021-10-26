@@ -18,7 +18,7 @@ const GetOutfitImage = props => {
       className="outfit-container"
       onClick={() => {
         history.push({
-          pathname: '/outfits/outfit-details',
+          pathname: '/outfit-details',
           state: { image: props.image, category: props.category },
         });
         outfitReset()

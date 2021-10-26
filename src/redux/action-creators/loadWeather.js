@@ -4,7 +4,7 @@ const loadWeather = async (dispatch) =>{
 
     
     let res = await axios.get(
-        `/api/weather/getZipCode/?userId=${sessionStorage.getItem('userId')}`
+        `/api/weather/getZipCode/?userId=${sessionStorage.getItem('userId')?sessionStorage.getItem('userId'):1}`
       );
   
       let userZipCode = res.data;
