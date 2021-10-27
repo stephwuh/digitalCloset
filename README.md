@@ -5,7 +5,7 @@ The main goal of Digital Closet is to help users dress stylishly.
 It aims to do so by allowing users to catalogue and organize their clothes digitally 
 and by providing them with outfit recommendations based on the clothes they have in their digital closet. 
 
-<img src="https://user-images.githubusercontent.com/56822167/138986771-0f67d3bd-28b2-402b-9c8f-9248ee65283d.PNG" width=250>
+<img src="https://user-images.githubusercontent.com/56822167/138986771-0f67d3bd-28b2-402b-9c8f-9248ee65283d.PNG" width=300>
 
 
 ## Tech Stack
