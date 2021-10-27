@@ -15,7 +15,9 @@ const LoadOutfitCategory = () => {
   const outfitCategoryApi = async () => {
     let categoryArr = [];
 
-    let res = await axios.get(`/api/outfit/getCategories/${window.sessionStorage.userId ? window.sessionStorage.userId : 1}`);
+    if(!window.sessionStorage.userId) return ""
+
+    let res = await axios.get(`/api/outfit/getCategories/${window.sessionStorage.userId}`);
     
     for (let i = 0; i < res.data.length; i++) {
       categoryArr.push(res.data[i].outfitCategory);

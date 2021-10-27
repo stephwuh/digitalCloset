@@ -3,7 +3,7 @@ import axios from 'axios';
 const loadCloset = async (dispatch) =>{
 
     // axios request is actually a get request. using post to send userId to the server so it can retrieve the correct clothes
-    const res = await axios.post('/api/closet/getClothingImages', {userId: sessionStorage.getItem('userId')? sessionStorage.getItem('userId'):1 });
+    const res = await axios.post('/api/closet/getClothingImages', {userId: sessionStorage.getItem('userId')});
     const data = res.data
 
     for(let i=0; i < data.length; i++){

@@ -53,6 +53,9 @@ const Signup = () => {
             setEmail("")
             setPassword("")
             setGender("")
+
+            
+
         } catch (error) {
             console.log(error.response)
         }
