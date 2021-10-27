@@ -14,8 +14,10 @@ and by providing them with outfit recommendations based on the clothes they have
   <img src="https://user-images.githubusercontent.com/56822167/138987036-6cb82293-e3de-473f-9e38-8d411e3cddc7.PNG" width=500>
   <img src="https://user-images.githubusercontent.com/56822167/138987017-048de5e4-5bb2-4d0e-804a-14030900d4dc.PNG" width=500>
 </span> 
-<img src="https://user-images.githubusercontent.com/56822167/138987024-08ef7f6d-ea70-4fd1-b79e-03dd34c49ed6.PNG" width=500>
-
+<span>
+  <img src="https://user-images.githubusercontent.com/56822167/138987024-08ef7f6d-ea70-4fd1-b79e-03dd34c49ed6.PNG" width=500>
+  <p>For the demo video, please visit this <a href="https://vimeo.com/639334937">link</a>.</p>
+</span>
 
 ## Tech Stack
 
