@@ -61,6 +61,10 @@ npm install
 
 4. Create .env file at the root of the project.
 
+
+https://user-images.githubusercontent.com/56822167/138985418-d4f9eced-809e-4d78-9ec8-96702cafd16f.mp4
+
+
 5. Create Cloudinary account and connect it to project.
 
   - This project uses Cloudinary's media platform to save image files to cloud storage. 
