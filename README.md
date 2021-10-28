@@ -16,8 +16,9 @@ and by providing them with outfit recommendations based on the clothes they have
 </span> 
 <span>
   <img src="https://user-images.githubusercontent.com/56822167/138987024-08ef7f6d-ea70-4fd1-b79e-03dd34c49ed6.PNG" width=500>
-  <span>Please visit this <a href="https://vimeo.com/639334937"><strong><em>link</em></strong></a> for the full demo video.</span>
 </span>
+
+<span>Please visit this <a href="https://vimeo.com/639334937"><strong><em>link</em></strong></a> for the full demo video.</span>
 
 ## Tech Stack
 
