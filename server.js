@@ -5,6 +5,7 @@ const clothingRouter = require('./server/router/clothing/clothingRouter.js')
 const outfitRouter = require('./server/router/outfit/outfitRouter.js')
 const closetRouter = require('./server/router/closet/closetRouter.js')
 const weatherRouter = require('./server/router/weather/weatherRouter.js')
+const lookbookRouter = require('./server/router/lookbook/lookbookRouter.js')
 const path = require('path');
 
 const cors = require('cors');
@@ -24,7 +25,7 @@ app.use('/api/clothing', clothingRouter)
 app.use('/api/outfit', outfitRouter)
 app.use('/api/closet', closetRouter)
 app.use('/api/weather', weatherRouter)
-
+app.use('/api/lookbook', lookbookRouter)
 
 
 const port = process.env.PORT || 3001;

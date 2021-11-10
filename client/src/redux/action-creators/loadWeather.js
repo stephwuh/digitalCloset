@@ -2,18 +2,20 @@ import axios from 'axios';
 
 const loadWeather = async (dispatch) =>{
 
+    let response = await axios.get(`/api/weather/getWeather/?userId=${sessionStorage.getItem('userId')?sessionStorage.getItem('userId'):0}`); 
     
-    let res = await axios.get(
-        `/api/weather/getZipCode/?userId=${sessionStorage.getItem('userId')?sessionStorage.getItem('userId'):1}`
-      );
+    // let res = await axios.get(
+    //     `/api/weather/getZipCode/?userId=${sessionStorage.getItem('userId')?sessionStorage.getItem('userId'):1}`
+    //   );
   
-      let userZipCode = res.data;
+    //   let userZipCode = res.data;
 
  
   
-      let response = await axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHERAPI_KEY}&q=${userZipCode}&days=3&aqi=yes&alerts=no`
-      );
+    //   let response = await axios.get(
+    //     `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHERAPI_KEY}&q=${userZipCode}&days=3&aqi=yes&alerts=no`
+    //   );
+
   
       let weatherInfo = [
         {

@@ -9,8 +9,6 @@ import NavBar from '.././navbar/NavBar.js';
 import SideNav from '.././navbar/SideNav.js';
 import LookbookPresentational from './LookbookPresentational.js';
 
-
-
 const Lookbook = () => {
   const [images, setImages] = useState('');
   const outfitStatus = useSelector(state => state.outfitSelection);
@@ -18,11 +16,10 @@ const Lookbook = () => {
   const dispatch = useDispatch();
   const { outfitReset } = bindActionCreators(actionCreators, dispatch);
 
-
   const buttonOnClick = async () => {
     let descriptionArr = [];
 
-    let description = "";
+    let description = '';
 
     for (let category in outfitStatus) {
       if (outfitStatus[category].length !== 0) {
@@ -39,31 +36,24 @@ const Lookbook = () => {
       )} ${descriptionArr[i].description}`;
     }
 
-    description += ` outfit for ${window.sessionStorage.gender}` ;
+    description += ` outfit for ${window.sessionStorage.gender}`;
 
-    console.log(description)
+    console.log(description);
 
-    let response = await axios.get(
-      `https://app.zenserp.com/api/v2/search?apikey=${process.env.REACT_APP_ZENSERP_KEY}&q=${description}&tbm=isch&gl=US&hl=en&num=50`
-    );
+    const response = await axios.get(`/api/lookbook/getImages/?description=${description}`);
 
     setImages(response.data);
-
   };
 
-  useEffect(()=>{
-    outfitReset()
-  }, [])
+  useEffect(() => {
+    outfitReset();
+  }, []);
 
   return (
     <div className="page-container">
       <NavBar />
       <SideNav />
-      <LookbookPresentational
-        buttonOnClick={buttonOnClick}
-        images={images}
-      />
-      
+      <LookbookPresentational buttonOnClick={buttonOnClick} images={images} />
     </div>
   );
 };
