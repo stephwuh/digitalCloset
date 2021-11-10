@@ -1,6 +1,6 @@
 //models
 
-const Outfit = require('../.././models/outfit.js');
+const Outfit = require('../../.././models/outfit.js');
 
 module.exports = {
 

@@ -1,16 +1,17 @@
 const express = require('express');
 const app = express();
-const authRouter = require('./router/auth/authRouter.js')
-const clothingRouter = require('./router/clothing/clothingRouter.js')
-const outfitRouter = require('./router/outfit/outfitRouter.js')
-const closetRouter = require('./router/closet/closetRouter.js')
-const weatherRouter = require('./router/weather/weatherRouter.js')
+const authRouter = require('./server/router/auth/authRouter.js')
+const clothingRouter = require('./server/router/clothing/clothingRouter.js')
+const outfitRouter = require('./server/router/outfit/outfitRouter.js')
+const closetRouter = require('./server/router/closet/closetRouter.js')
+const weatherRouter = require('./server/router/weather/weatherRouter.js')
+const path = require('path');
 
 const cors = require('cors');
 
 const connect = require('./database/database.js');
 
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 //middleware
@@ -29,6 +30,10 @@ app.use('/api/weather', weatherRouter)
 const port = process.env.PORT || 3001;
 
 connect();
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+ '/client/build/index.html'));
+});
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

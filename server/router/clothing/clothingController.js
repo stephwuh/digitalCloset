@@ -1,6 +1,6 @@
 const { cloudinary } = require('../.././cloudinary.js');
 
-const Clothing = require('../.././models/clothing.js');
+const Clothing = require('../../.././models/clothing.js');
 
 module.exports = {
   
