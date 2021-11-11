@@ -40,9 +40,9 @@ and by providing them with outfit recommendations based on the clothes they have
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`REACT_APP_WEATHERAPI_KEY`
+`WEATHERAPI_KEY`
 
-`REACT_APP_ZENSERP_KEY`
+`ZENSERP_KEY`
 
 `CLOUDINARY_NAME`
 
@@ -50,14 +50,9 @@ To run this project, you will need to add the following environment variables to
 
 `CLOUDINARY_API_SECRET`
 
-`SEQUELIZE_DATABASE_USER_ID`
-
-`SEQUELIZE_DATABASE_PW`
-
-`SEQUELIZE_DATABASE_NAME`
 ## Installation
 
-Below instructions are based on how I (the creator of the project) created the project in Windows.
+Below are instructions for users with Windows OS.
 
 1. Install Node.js, npm, and git if you haven't already. 
 
