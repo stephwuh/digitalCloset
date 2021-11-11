@@ -12,6 +12,8 @@ const Outfits = () => {
 
   const categoryStatus = useSelector(state => state.outfitCategory);
 
+  console.log(categoryStatus)
+
   const loadOutfit = async () => {
     //using a post instead of a get because I need to send id info
     let res = await axios.get(`/api/outfit/load/${window.sessionStorage.userId}`);
@@ -30,7 +32,7 @@ const Outfits = () => {
       <NavBar />
       <SideNav />
       <div className="page-content">
-        {!categoryStatus && <h3>Nothing to Show</h3>}
+        {categoryStatus.length===0 && <div className='no-outfits'><h3>No Outfits to Show</h3></div>}
         {categoryStatus &&
           categoryStatus.map(category => {
             return (

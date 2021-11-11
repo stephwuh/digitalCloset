@@ -26,5 +26,14 @@
     margin-top: 1rem;
 }
 
+.no-outfits{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vh;
+    text-align: center;
+    /* width: 30vw; */
+}
+
 
 
