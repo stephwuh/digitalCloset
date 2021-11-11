@@ -7,6 +7,7 @@
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.26.3",
     "cloudinary-react": "^1.7.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "install": "^0.13.0",
