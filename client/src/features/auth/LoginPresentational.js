@@ -15,7 +15,7 @@ const LoginPresentational = (props) => {
                         <br/>
                         <input className="auth-input-field" type='password' placeholder="password" onChange={props.handleChangePW} value={props.password}/>
                         <br/>
-                        <input className="auth-button auth-submit" type="submit" value="Log In"></input>
+                        <button className="auth-button auth-submit" type="submit">Login</button>
                         <button className="auth-button auth-create" type="button" onClick={props.handleOnClick}>Create New Account</button>
                     </form>
 

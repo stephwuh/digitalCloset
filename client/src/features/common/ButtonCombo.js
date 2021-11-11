@@ -4,7 +4,7 @@ import React from 'react';
 export default function ButtonCombo(props) {
   return (
     <>
-      <button className="form-button submit" type="submit">
+      <button className="form-button submit" type="submit" disabled={props.processingForm}>
         Submit
       </button>
       <button
@@ -16,8 +16,9 @@ export default function ButtonCombo(props) {
       </button>
       <button
         className="form-button delete"
-        type="but ton"
+        type="button"
         onClick={props.handleDeleteOnClick}
+        disabled={props.processingForm}
       >
         Delete
       </button>

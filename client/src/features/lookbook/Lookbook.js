@@ -11,12 +11,26 @@ import LookbookPresentational from './LookbookPresentational.js';
 
 const Lookbook = () => {
   const [images, setImages] = useState('');
+  const [processing, setProcessing] = useState(false);
+
   const outfitStatus = useSelector(state => state.outfitSelection);
 
   const dispatch = useDispatch();
   const { outfitReset } = bindActionCreators(actionCreators, dispatch);
 
   const buttonOnClick = async () => {
+    if (
+      outfitStatus.outerwear.length === 0 &&
+      outfitStatus.layer.length === 0 &&
+      outfitStatus.shirt.length === 0 &&
+      outfitStatus.pants.length === 0
+    ) {
+      alert('Choose at least one piece of clothing to browse Lookbook.');
+      return;
+    }
+
+    setProcessing(true);
+
     let descriptionArr = [];
 
     let description = '';
@@ -38,11 +52,12 @@ const Lookbook = () => {
 
     description += ` outfit for ${window.sessionStorage.gender}`;
 
-    console.log(description);
-
-    const response = await axios.get(`/api/lookbook/getImages/?description=${description}`);
+    const response = await axios.get(
+      `/api/lookbook/getImages/?description=${description}`
+    );
 
     setImages(response.data);
+    setProcessing(false);
   };
 
   useEffect(() => {
@@ -53,7 +68,11 @@ const Lookbook = () => {
     <div className="page-container">
       <NavBar />
       <SideNav />
-      <LookbookPresentational buttonOnClick={buttonOnClick} images={images} />
+      <LookbookPresentational
+        buttonOnClick={buttonOnClick}
+        images={images}
+        processing={processing}
+      />
     </div>
   );
 };

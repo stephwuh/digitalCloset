@@ -25,6 +25,10 @@ const ClothingForm = props => {
     props.formUse === 'clothingDetails' ? location.state.description : ''
   );
 
+  const [processingForm, setProcessingForm] = useState(false);
+
+  console.log(color)
+
   const handleFileInputChange = e => {
     const file = e.target.files[0];
     previewFile(file);
@@ -61,6 +65,8 @@ const ClothingForm = props => {
 
     if (!image && !category && !color) return;
 
+    setProcessingForm(true);
+
     let file = {
       clothingId: location.state.id,
       clothingImage: image,
@@ -90,6 +96,8 @@ const ClothingForm = props => {
 
     if (!image && !category && !color) return;
 
+    setProcessingForm(true);
+
     let file = {
       clothingImage: image,
       clothingCategory: category,
@@ -116,6 +124,9 @@ const ClothingForm = props => {
   };
 
   const handleDeleteOnClick = async () => {
+
+    setProcessingForm(true);
+
     try {
       await axios.delete(
         `/api/clothing/delete/?userId=${sessionStorage.getItem(
@@ -137,7 +148,6 @@ const ClothingForm = props => {
   
     };
 
-
   return (
     <ClothingFormPresentational
       handleSubmitAddFile={handleSubmitAddFile}
@@ -156,6 +166,8 @@ const ClothingForm = props => {
       category={category}
       description={description}
       brand={brand}
+      processingForm={processingForm}
+      color={color}
     />
   );
 };

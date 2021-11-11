@@ -193,3 +193,14 @@
 .color-button{
     margin: 0 0.3rem;
 }
+
+.color-btn-border{
+    border: 3px solid #39FF14;
+}
+
+.color-container{
+    height: 2rem;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}

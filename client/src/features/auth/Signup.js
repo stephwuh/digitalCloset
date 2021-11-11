@@ -33,6 +33,12 @@ const Signup = () => {
     }
     const handleOnSubmit = async (e) => {
         e.preventDefault()
+
+        if(!first || !last || !email || !password || !gender){
+            alert("Please fill out all the necessary information to create an account.")
+            return
+        }
+
         let signupInfo = {
             firstName: first,
             lastName: last,
@@ -57,7 +63,10 @@ const Signup = () => {
             
 
         } catch (error) {
-            console.log(error.response)
+            if(error.response.data==="Account already exists with this email"){
+                alert("Account already exists with this email")
+            }
+
         }
         
     }

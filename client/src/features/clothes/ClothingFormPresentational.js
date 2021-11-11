@@ -125,14 +125,15 @@ const ClothingFormPresentational = props => {
           <div className="content">
             <Colors
               onClick={props.handleColorOnClick}
-              disabled={!props.edit && props.formUse === 'clothingDetails'}
+              disabled={!props.edit && props.formUse === 'clothingDetails'} 
+              color={props.color}
             />
           </div>
         </div>
 
         <div className="button-container">
           {props.formUse === 'addClothes' && (
-            <button className="form-button submit" type="submit">
+            <button className="form-button submit" type="submit" disabled={props.processingForm}>
               Submit
             </button>
           )}
@@ -140,6 +141,7 @@ const ClothingFormPresentational = props => {
           {props.edit && props.formUse === 'clothingDetails' && <ButtonCombo
             handleCancelOnClick = {props.handleCancelOnClick}
             handleDeleteOnClick = {props.handleDeleteOnClick}
+            processingForm = {props.processingForm}
           />}
 
           {!props.edit && props.formUse === 'clothingDetails' && (
