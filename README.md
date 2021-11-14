@@ -1,6 +1,10 @@
 
 # Digital Closet
 
+<a href="https://digital-closet.herokuapp.com/">Live Website</a>
+<br/>
+<a href="https://vimeo.com/639334937">Demo Video</a>
+
 The main goal of Digital Closet is to help users dress stylishly. 
 It aims to do so by allowing users to catalogue and organize their clothes digitally 
 and by providing them with outfit recommendations based on the clothes they have in their digital closet. 
@@ -18,7 +22,7 @@ and by providing them with outfit recommendations based on the clothes they have
   <img src="https://user-images.githubusercontent.com/56822167/138987024-08ef7f6d-ea70-4fd1-b79e-03dd34c49ed6.PNG" width=400>
 </span>
 
-<span>Please visit this <a href="https://vimeo.com/639334937"><strong><em>link</em></strong></a> for the full demo video.</span>
+
 
 ## Tech Stack
 
