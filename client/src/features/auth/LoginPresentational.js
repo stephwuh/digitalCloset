@@ -17,7 +17,11 @@ const LoginPresentational = (props) => {
                         <br/>
                         <button className="auth-button auth-submit" type="submit">Login</button>
                         <button className="auth-button auth-create" type="button" onClick={props.handleOnClick}>Create New Account</button>
+                        <div className="link-container">
+                            <a href="https://vimeo.com/639334937" target="_blank">Demo Video</a>
+                        </div>
                     </form>
+                    
 
             </div>
         </div>

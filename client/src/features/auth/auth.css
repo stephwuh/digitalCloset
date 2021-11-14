@@ -15,7 +15,22 @@
     display: flex;
     justify-content: center;
     
-  
+}
+
+.link-container{
+    display: flex;
+    justify-content: start;
+    
+}
+
+.link-container > a{
+    font-size: 0.8rem;
+    color: black;
+    list-style: none;
+}
+
+.link-container > a:hover{
+     color: blue;
 }
 
 .auth-form{
